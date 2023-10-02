@@ -1,0 +1,32 @@
+import { getHttpError, ok } from '@/application/helpers';
+import { Controller, Http } from '@/application/interfaces';
+import { Client, CreateClient } from '@/domain/interfaces/useCases/client';
+
+export class ClientController implements Controller {
+  constructor(
+    private readonly useCaseName: Client.ClientUseCaseName,
+    private readonly useCase: Client.ClientUseCase,
+  ) {}
+
+  async handle({
+    data: params,
+    locals,
+  }: Http.Request<any>): Promise<Http.Response> {
+    return this?.[this.useCaseName]({ params, locals }).catch((e: any) =>
+      getHttpError(e),
+    );
+  }
+
+  private async createClient({
+    params,
+  }: CreateClient.ParamsUseCase): Promise<Http.Response> {
+    const { client, address } = params;
+
+    const { message } = await (this.useCase() as CreateClient).run({
+      client,
+      address,
+    });
+
+    return ok({ message });
+  }
+}
