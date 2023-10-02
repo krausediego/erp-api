@@ -1,6 +1,10 @@
 import { getHttpError, ok } from '@/application/helpers';
 import { Controller, Http } from '@/application/interfaces';
-import { Client, CreateClient } from '@/domain/interfaces/useCases/client';
+import {
+  Client,
+  CreateClient,
+  FindManyClients,
+} from '@/domain/interfaces/useCases/client';
 
 export class ClientController implements Controller {
   constructor(
@@ -28,5 +32,18 @@ export class ClientController implements Controller {
     });
 
     return ok({ message });
+  }
+
+  private async findManyClients({
+    params,
+  }: FindManyClients.ParamsUseCase): Promise<Http.Response> {
+    const { page, limit } = params;
+
+    const { clients, total } = await (this.useCase() as FindManyClients).run({
+      page,
+      limit,
+    });
+
+    return ok({ clients, total });
   }
 }

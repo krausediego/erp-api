@@ -1,7 +1,10 @@
-import { CreateClient } from '@/domain/interfaces/useCases/client';
+import {
+  CreateClient,
+  FindManyClients,
+} from '@/domain/interfaces/useCases/client';
 
 export namespace Client {
-  export type ClientUseCaseName = 'createClient';
+  export type ClientUseCaseName = 'createClient' | 'findManyClients';
 
-  export type ClientUseCase = () => CreateClient;
+  export type ClientUseCase = () => CreateClient | FindManyClients;
 }

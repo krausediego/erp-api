@@ -1,5 +1,12 @@
-import { Client, CreateClient } from '@/domain/interfaces/useCases/client';
-import { CreateClientUseCase } from '@/domain/useCases/client';
+import {
+  Client,
+  CreateClient,
+  FindManyClients,
+} from '@/domain/interfaces/useCases/client';
+import {
+  CreateClientUseCase,
+  FindManyClientsUseCase,
+} from '@/domain/useCases/client';
 import {
   makeAddressesRepository,
   makeClientsRepository,
@@ -12,8 +19,13 @@ const createClient = (): CreateClient => {
   );
 };
 
+const findManyClients = (): FindManyClients => {
+  return new FindManyClientsUseCase(makeClientsRepository());
+};
+
 const useCases = {
   createClient,
+  findManyClients,
 };
 
 const makeClientUseCase = (

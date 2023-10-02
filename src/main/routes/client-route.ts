@@ -11,4 +11,9 @@ export default (router: Router): void => {
     validateRequest(createClientValidateSchema),
     adaptRoute(makeClientController('createClient')),
   );
+
+  router.get(
+    '/client/find-many-clients/:page/:limit',
+    adaptRoute(makeClientController('findManyClients')),
+  );
 };
