@@ -3,6 +3,7 @@ import {
   ForbiddenError,
   InternalServerError,
   NotFoundError,
+  UnauthorizedError,
 } from '@/application/errors';
 import { Http } from '@/application/interfaces';
 
@@ -10,11 +11,16 @@ type errorTypes =
   | BadRequestError
   | ForbiddenError
   | InternalServerError
-  | NotFoundError;
+  | NotFoundError
+  | UnauthorizedError;
 
-export const ok = (data: Record<string, any>): Http.Response => ({
+export const ok = (
+  data: Record<string, any>,
+  cookie?: boolean,
+): Http.Response => ({
   statusCode: 200,
   body: data,
+  cookie,
 });
 
 export const created = (data: Record<string, any>): Http.Response => ({

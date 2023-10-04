@@ -45,7 +45,6 @@ export const createClientValidateSchema = yup.object({
           }
           return schema;
         }),
-        userId: yup.string().required('ID usuário obrigatório'),
       })
       .required('Dados do cliente obrigatórios'),
     address: yup

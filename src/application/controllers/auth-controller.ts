@@ -39,6 +39,6 @@ export class AuthController implements Controller {
       password,
     });
 
-    return ok({ token });
+    return ok({ token }, true);
   }
 }

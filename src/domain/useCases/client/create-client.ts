@@ -1,4 +1,3 @@
-import { BadRequestError } from '@/application/errors';
 import {
   IAddressesRepository,
   IClientsRepository,
@@ -12,37 +11,39 @@ export class CreateClientUseCase implements CreateClient {
   ) {}
 
   async run(params: CreateClient.Params): Promise<CreateClient.Response> {
-    try {
-      const { client, address } = params;
+    const { client, address, userId } = params;
 
-      let clientCreated;
+    let clientCreated;
 
-      // It guarantees that even if the mandatory data for both types is past,
-      // the customer will only be registered with the data referring to the chosen type.
-      if (client.type === 'FISICO') {
-        delete client.cnpj;
-        delete client.inscricaoEstadual;
-        delete client.razaoSocial;
+    // It guarantees that even if the mandatory data for both types is past,
+    // the customer will only be registered with the data referring to the chosen type.
+    if (client.type === 'FISICO') {
+      delete client.cnpj;
+      delete client.inscricaoEstadual;
+      delete client.razaoSocial;
 
-        clientCreated = await this.clientsRepository.create(client);
-      } else {
-        delete client.birthDate;
-        delete client.genre;
-        delete client.cpf;
-
-        clientCreated = await this.clientsRepository.create(client);
-      }
-
-      await this.addressesRepository.create({
-        ...address,
-        clientId: clientCreated!.id,
+      clientCreated = await this.clientsRepository.create({
+        ...client,
+        userId,
       });
+    } else {
+      delete client.birthDate;
+      delete client.genre;
+      delete client.cpf;
 
-      return {
-        message: 'Cliente criado com sucesso!',
-      };
-    } catch (err: any) {
-      throw new BadRequestError(err);
+      clientCreated = await this.clientsRepository.create({
+        ...client,
+        userId,
+      });
     }
+
+    await this.addressesRepository.create({
+      ...address,
+      clientId: clientCreated!.id,
+    });
+
+    return {
+      message: 'Cliente criado com sucesso!',
+    };
   }
 }

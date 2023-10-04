@@ -8,6 +8,7 @@ export namespace CreateClient {
   export type Params = {
     client: Prisma.ClientCreateManyInput;
     address: Omit<Prisma.AddressCreateManyInput, 'clientId'>;
+    userId: string;
   };
 
   export type ParamsUseCase = {

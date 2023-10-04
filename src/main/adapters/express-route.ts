@@ -17,6 +17,13 @@ export const adaptRoute = (controller: Controller) => {
       locals: req.locals,
     });
 
+    if (httpResponse?.cookie) {
+      res.cookie('token', httpResponse?.body?.token, {
+        httpOnly: true,
+        secure: true,
+      });
+    }
+
     if (httpResponse.statusCode >= 200 && httpResponse.statusCode <= 299) {
       res.status(httpResponse.statusCode).json(httpResponse?.body);
     } else if (httpResponse?.body instanceof Error) {

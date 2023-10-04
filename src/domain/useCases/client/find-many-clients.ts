@@ -5,12 +5,14 @@ export class FindManyClientsUseCase implements FindManyClients {
   constructor(private readonly clientsRepository: IClientsRepository) {}
 
   async run(params: FindManyClients.Params): Promise<FindManyClients.Response> {
-    const { page, limit } = params;
+    const { page, limit, nameOrEmail, userId } = params;
 
-    const { clients, total } = await this.clientsRepository.findManyClients(
+    const { clients, total } = await this.clientsRepository.findManyClients({
+      userId,
       page,
       limit,
-    );
+      nameOrEmail,
+    });
 
     return {
       clients,

@@ -10,5 +10,6 @@ export namespace Http {
     statusCode: number;
     code?: number;
     body?: any;
+    cookie?: boolean;
   }
 }
