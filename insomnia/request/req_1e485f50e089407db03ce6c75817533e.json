@@ -1,0 +1,39 @@
+{
+  "_id": "req_1e485f50e089407db03ce6c75817533e",
+  "parentId": "fld_70a422244631477e98057dcd335fe9b7",
+  "modified": 1696333641437,
+  "created": 1696333641437,
+  "url": "{{ _.baseURL }}{{ _.prefix }}/client/create-client",
+  "name": "Create client",
+  "description": "",
+  "method": "POST",
+  "body": {
+    "mimeType": "application/json",
+    "text": "{\n\t\"client\": {\n\t\t\"name\": \"{% faker 'name', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %}\",\n\t\t\"email\": \"{% faker 'internet', '', '', '', '', '', '', '', '', '', '', '', '', '', 'email', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %}\",\n\t\t\"status\": {% faker 'datatype', '', '', '', '', '', '', 'boolean', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'en' %},\n\t\t\"phone\": \"{% faker 'phone', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'fullName', 'phoneNumberFormat', '', '', '', '', '', '', 'pt_BR' %}\",\n\t\t\"type\": \"{% randomPick 'FISICO;JURIDICO' %}\",\n\t\t\"birthDate\": {% faker 'date', '', '', '', '', '', '', '', 'birthdate', '', '', '', '', '', '', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %},\n\t\t\"genre\": \"{% faker 'name', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'gender', '', '', '', '', '', '', 'b64::dHJ1ZQ==::46b', 'pt_BR' %}\",\n\t\t\"cpf\": \"{% geradorDeCPF true %}\",\n\t\t\"cnpj\": \"{% geradorDeCNPJ true %}\",\n\t\t\"inscricaoEstadual\": \"{% faker 'datatype', '', '', '', 'color', 'suffixes', '', 'float', '', '', '', '', '', '', '', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %}\",\n\t\t\"razaoSocial\": \"{% faker 'company', '', '', '', '', 'name', '', '', '', '', '', '', '', '', '', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %}\"\n\t},\n\t\"address\": {\n\t\t\"address\": \"{% faker 'address', 'street', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %}\",\n\t\t\"district\": \"{% faker 'address', 'secondaryAddress', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %}\",\n\t\t\"uf\": \"{% faker 'address', 'stateAbbr', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %}\",\n\t\t\"cep\": \"{% faker 'address', 'zipCodeByState', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %}\",\n\t\t\"city\": \"{% faker 'address', 'city', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %}\",\n\t\t\"number\": {% faker 'address', 'buildingNumber', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %},\n\t\t\"reference\": \"{% faker 'address', 'secondaryAddress', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'fullName', '', '', '', '', '', '', '', 'pt_BR' %}\"\n\t}\n}"
+  },
+  "parameters": [],
+  "headers": [
+    {
+      "name": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "name": "User-Agent",
+      "value": "insomnia/8.1.0"
+    }
+  ],
+  "authentication": {
+    "type": "bearer",
+    "prefix": "Bearer",
+    "token": "{% response 'body', 'req_e5250080506b4da3b8b4d18a59b4840b', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+  },
+  "metaSortKey": -1696264806942,
+  "isPrivate": false,
+  "settingStoreCookies": true,
+  "settingSendCookies": true,
+  "settingDisableRenderRequestBody": false,
+  "settingEncodeUrl": true,
+  "settingRebuildPath": true,
+  "settingFollowRedirects": "global",
+  "_type": "request"
+}

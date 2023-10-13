@@ -1,0 +1,35 @@
+{
+  "_id": "req_c4ad240a95bf4c708f248c4bc1f20784",
+  "parentId": "fld_6a07e976b6484ab0aa56b67b0e6044ce",
+  "modified": 1696244990838,
+  "created": 1696244990838,
+  "url": "{{ _.baseURL }}{{ _.prefix }}/register",
+  "name": "Register",
+  "description": "",
+  "method": "POST",
+  "body": {
+    "mimeType": "application/json",
+    "text": "{\n\t\"username\": \"krausediego\",\n\t\"email\": \"diegoemanuelk@gmail.com\",\n\t\"password\": \"diego01\"\n}"
+  },
+  "parameters": [],
+  "headers": [
+    {
+      "name": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "name": "User-Agent",
+      "value": "insomnia/8.1.0"
+    }
+  ],
+  "authentication": {},
+  "metaSortKey": -1696244990838,
+  "isPrivate": false,
+  "settingStoreCookies": true,
+  "settingSendCookies": true,
+  "settingDisableRenderRequestBody": false,
+  "settingEncodeUrl": true,
+  "settingRebuildPath": true,
+  "settingFollowRedirects": "global",
+  "_type": "request"
+}

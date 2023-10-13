@@ -1,0 +1,33 @@
+{
+  "_id": "req_2cdf10e4b1e54fadbb0e2a1d79d2d31f",
+  "parentId": "fld_70a422244631477e98057dcd335fe9b7",
+  "modified": 1696264806842,
+  "created": 1696264806842,
+  "url": "{{ _.baseURL }}{{ _.prefix }}/client/find-client-by-id/c4060340-b6e7-45d1-a080-2be30a53d97e",
+  "name": "Find Client By ID",
+  "description": "",
+  "method": "GET",
+  "body": {},
+  "parameters": [],
+  "headers": [
+    {
+      "name": "User-Agent",
+      "value": "insomnia/8.1.0",
+      "id": "pair_677b5ec205e34f329cbaa5f9689f0cb0"
+    }
+  ],
+  "authentication": {
+    "type": "bearer",
+    "prefix": "Bearer",
+    "token": "{% response 'body', 'req_e5250080506b4da3b8b4d18a59b4840b', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+  },
+  "metaSortKey": -1696264806842,
+  "isPrivate": false,
+  "settingStoreCookies": true,
+  "settingSendCookies": true,
+  "settingDisableRenderRequestBody": false,
+  "settingEncodeUrl": true,
+  "settingRebuildPath": true,
+  "settingFollowRedirects": "global",
+  "_type": "request"
+}

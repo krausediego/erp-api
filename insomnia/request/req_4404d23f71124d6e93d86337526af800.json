@@ -1,0 +1,54 @@
+{
+  "_id": "req_4404d23f71124d6e93d86337526af800",
+  "parentId": "fld_70a422244631477e98057dcd335fe9b7",
+  "modified": 1696247541574,
+  "created": 1696247541574,
+  "url": "{{ _.baseURL }}{{ _.prefix }}/client/find-many-clients/0/10",
+  "name": "Find Many Clients",
+  "description": "",
+  "method": "GET",
+  "body": {},
+  "parameters": [
+    {
+      "id": "pair_8e5c5545a63742ed973c7d9f811ca6c0",
+      "name": "nameOrEmail",
+      "value": "",
+      "description": "",
+      "disabled": false
+    },
+    {
+      "id": "pair_d2c1b9d821dc463fb86fe63a23489ced",
+      "name": "status",
+      "value": "",
+      "description": "",
+      "disabled": false
+    },
+    {
+      "id": "pair_34eacdaaa4bb4abc87e97b55bc56bbd1",
+      "name": "type",
+      "value": "",
+      "description": "",
+      "disabled": false
+    }
+  ],
+  "headers": [
+    {
+      "name": "User-Agent",
+      "value": "insomnia/8.1.0"
+    }
+  ],
+  "authentication": {
+    "type": "bearer",
+    "prefix": "Bearer",
+    "token": "{% response 'body', 'req_e5250080506b4da3b8b4d18a59b4840b', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+  },
+  "metaSortKey": -1696247541574,
+  "isPrivate": false,
+  "settingStoreCookies": true,
+  "settingSendCookies": true,
+  "settingDisableRenderRequestBody": false,
+  "settingEncodeUrl": true,
+  "settingRebuildPath": true,
+  "settingFollowRedirects": "global",
+  "_type": "request"
+}

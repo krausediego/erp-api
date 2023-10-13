@@ -1,0 +1,10 @@
+{
+  "_id": "wrk_52c38d57cde94561bdb5e3cc1db6b5d3",
+  "parentId": null,
+  "modified": 1696244023810,
+  "created": 1696244023810,
+  "name": "ERP_API",
+  "description": "",
+  "scope": "collection",
+  "_type": "workspace"
+}

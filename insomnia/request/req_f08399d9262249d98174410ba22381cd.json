@@ -1,0 +1,39 @@
+{
+  "_id": "req_f08399d9262249d98174410ba22381cd",
+  "parentId": "fld_70a422244631477e98057dcd335fe9b7",
+  "modified": 1696338007206,
+  "created": 1696338007206,
+  "url": "{{ _.baseURL }}{{ _.prefix }}/client/update-client/c4060340-b6e7-45d1-a080-2be30a53d97e",
+  "name": "Update client",
+  "description": "",
+  "method": "PUT",
+  "body": {
+    "mimeType": "application/json",
+    "text": "{\n\t\"client\": {\n\t\t\"name\": \"Diego\"\n\t},\n\t\"addresses\": [\n\t\t{\n\t\t\t\"id\": \"114a8698-014f-4648-9f97-1137834828fe\",\n\t\t\t\"address\": \"Adolfo antônio emmendoerfer\"\n\t\t}\n\t]\n}"
+  },
+  "parameters": [],
+  "headers": [
+    {
+      "name": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "name": "User-Agent",
+      "value": "insomnia/8.1.0"
+    }
+  ],
+  "authentication": {
+    "type": "bearer",
+    "prefix": "Bearer",
+    "token": "{% response 'body', 'req_e5250080506b4da3b8b4d18a59b4840b', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+  },
+  "metaSortKey": -1696338007206,
+  "isPrivate": false,
+  "settingStoreCookies": true,
+  "settingSendCookies": true,
+  "settingDisableRenderRequestBody": false,
+  "settingEncodeUrl": true,
+  "settingRebuildPath": true,
+  "settingFollowRedirects": "global",
+  "_type": "request"
+}

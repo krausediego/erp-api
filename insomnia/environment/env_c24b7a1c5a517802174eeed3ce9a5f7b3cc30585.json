@@ -1,0 +1,21 @@
+{
+  "_id": "env_c24b7a1c5a517802174eeed3ce9a5f7b3cc30585",
+  "parentId": "wrk_52c38d57cde94561bdb5e3cc1db6b5d3",
+  "modified": 1696244023811,
+  "created": 1696244023811,
+  "name": "Base Environment",
+  "data": {
+    "baseURL": "http://localhost:1234",
+    "prefix": "/api"
+  },
+  "dataPropertyOrder": {
+    "&": [
+      "baseURL",
+      "prefix"
+    ]
+  },
+  "color": null,
+  "isPrivate": false,
+  "metaSortKey": 1696244023811,
+  "_type": "environment"
+}
